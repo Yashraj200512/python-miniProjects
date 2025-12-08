@@ -46,12 +46,14 @@ def get_student_data(studentList,student_id):
      
           
 def delete_student(studentList,studentID):
-     i=-1
-     for s in studentList:
-          i=i+1
-          if s.get("id")==studentID:
-              studentList.pop(i)
-              break
+     # i=-1
+     # for s in studentList:
+     #      i=i+1
+     #      if s.get("id")==studentID:
+     #          studentList.pop(i)
+     #          break
+
+     studentList[:]=[s for s in studentList if s.get("id")!=studentID]
 
      save_data(studentList)
     
