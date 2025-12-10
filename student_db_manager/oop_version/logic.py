@@ -5,8 +5,8 @@ import random
 
 class Student:
 
-     def __init__(self,id:int=0,name:str="no_name",email:str="no_email"):
-          self.id=id
+     def __init__(self,student_id:int=0,name:str="no_name",email:str="no_email"):
+          self.student_id=student_id
           self.name=name
           self.email=email
      
