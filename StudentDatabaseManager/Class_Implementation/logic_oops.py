@@ -3,7 +3,7 @@ import os
 import random
 
 
-class studentClass:
+class Student:
 
      def __init__(self,id:int=0,name:str="no_name",email:str="no_email"):
           self.id=id
