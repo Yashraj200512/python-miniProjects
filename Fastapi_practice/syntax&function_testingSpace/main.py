@@ -1,15 +1,30 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
-# 1. Create the app object
 app = FastAPI()
 
-# 2. Create a "Route" (URL)
+
+fake_db = []
+
+
+class StudentSchema(BaseModel):
+    name : str
+    age:int
+    email:str
+
 @app.get("/")
 async def root():
-    # 3. Return data
+
     return {"message": "Hello World", "status": "active"}
 
-# 4. Another route that accepts data in the URL
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     return {"item_id": item_id}
+
+
+@app.post("/create-student/")
+async def create_student(student:StudentSchema):
+    return {
+        "message": "Student received successfully",
+        "data": student
+    }
