@@ -36,7 +36,7 @@ def load_data():
           student_list=[]
           
           for d in dict_list:
-           student_list.append(studentClass.from_dict(d))
+           student_list.append(Student.from_dict(d))
           
           return student_list
 
@@ -64,7 +64,7 @@ def generate_id(student_list):
 def add_student(student_list,name,email):
      unique_id=generate_id(student_list) 
 
-     new_student=studentClass(unique_id,name,email)
+     new_student=Student(unique_id,name,email)
 
      student_list.append(new_student)
      
