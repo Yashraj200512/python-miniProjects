@@ -2,9 +2,9 @@
 
 A collection of my Python learning projects, scripts, and experiments.
 
-## 📂 Repository Contents
+## Repository Contents
 
-### 🐍 Python Basics (`/python-basics`)
+###  Python Basics (`/python-basics`)
 Fundamental scripts and logic practice, focusing on transitioning from procedural to Object-Oriented Programming.
 
 * **Student Database Manager (OOP Version):** *(`StudentDatabaseManager-usingOOPS`)*
@@ -31,7 +31,7 @@ Projects focused on data extraction, web automation, and Flask integration.
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 1. **Student Manager (OOP Version):**
    ```bash
