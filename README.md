@@ -9,21 +9,21 @@ Fundamental scripts and logic practice, focusing on transitioning from procedura
 
 * **Student Database Manager (OOP Version):** *(`StudentDatabaseManager-usingOOPS`)*
   * A CLI tool rewritten using **Object-Oriented Programming** principles.
-  * *Key Features:* Class-based architecture, JSON persistence, Factory Pattern (`from_dict`), and Type Hinting.
+  * Key Features: Class-based architecture, JSON persistence, Factory Pattern (`from_dict`), and Type Hinting.
   * *Files:* `logic_oops.py`, `main_oops.py`.
 
 * **Student Database Manager (Basic):** *(`StudentDatabaseManager`)*
   * The original CLI tool managing student records using dictionaries and functions.
-  * *Key Concepts:* File I/O, Basic Modular Code (`logic.py`, `main.py`).
+  * Key Concepts: File I/O, Basic Modular Code(`logic.py`, `main.py`).
 
 * **Syntax Practice:**
   * Basic Python syntax experiments (`getting_used_to_syntax.py`).
 
-### 🕷️ Web Scraping (`/scraper-python`)
+###  Web Scraping (`/scraper-python`)
 Projects focused on data extraction, web automation, and Flask integration.
 
 * **Random Facts Scraper:**
-  * A web application that scrapes Wikipedia for "unusual articles" and serves them via a Flask API to a frontend.
+  * A web application that scrapes Wikipedia for "unusual articles" and serves them via a Flask API to a frontend(needs lots of fixing).
   * *Tech:* Python (Flask, BeautifulSoup4), HTML/CSS, JavaScript (Fetch API).
   
 * **Simple Scraping:**
