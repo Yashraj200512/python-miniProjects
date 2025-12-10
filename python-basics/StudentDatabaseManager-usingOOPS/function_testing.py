@@ -43,5 +43,17 @@ def load_data():
         return []
     
 
+def save_data(student_list):
+     #    with open("data.json","w") as f:
+            dict_list=[]
+           
+            for s in student_list:
+                 
+                 dict_list.append(s.to_dict())
+            return dict_list
+          #   json.dump(dict_list,f,indent=4)
 
 print(load_data())    
+data=load_data()
+print(data)
+print(save_data(data))

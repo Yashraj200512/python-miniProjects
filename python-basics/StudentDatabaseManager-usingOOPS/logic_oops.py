@@ -5,7 +5,7 @@ import random
 
 class studentClass:
 
-     def __init__(self,id,name,email):
+     def __init__(self,id:int=0,name:str="no_name",email:str="no_email"):
           self.id=id
           self.name=name
           self.email=email
@@ -33,60 +33,62 @@ def load_data():
     try:
          with open("data.json",'r') as f:
           dict_list= json.load(f)
-          class_list=[]
-          for d in dict_list:
-               class_list.append(studentClass.from_dict(d))
+          student_list=[]
           
-          return class_list
+          for d in dict_list:
+           student_list.append(studentClass.from_dict(d))
+          
+          return student_list
 
 
     except FileNotFoundError:
         return []
 
-def save_data(studentList):
+def save_data(student_list):
         with open("data.json","w") as f:
-            json.dump(studentList,f,indent=4)
+         dict_list=[]
+
+         for s in student_list:
+           dict_list.append(s.to_dict())
+
+         json.dump(dict_list,f,indent=4)
 
 
-def generate_id(studentLIst):
+def generate_id(student_list):
      while True:
-          new_id=str(random.randint(1000,9999))
-          if not any(s.get('id')==new_id for s in studentLIst):
+          new_id=int(random.randint(1000,9999))
+          if not any(s.id==new_id for s in student_list):
                return new_id
 
 
-def add_student(studentList,name,email):
-     unique_id=generate_id(studentList)
+def add_student(student_list,name,email):
+     unique_id=generate_id(student_list) 
 
-     new_student={
-          "id":unique_id,
-          "name":name,
-          "email":email
-     }
+     new_student=studentClass(unique_id,name,email)
 
-     studentList.append(new_student)
+     student_list.append(new_student)
      
-     save_data(studentList)
+     save_data(student_list)
 
 
-def get_student_data(studentList,student_id):
+def get_student_data(student_list,student_id):
    
-     for s in studentList:
-          if s.get('id')==student_id:
+     for s in student_list:
+          if s.id==student_id:
                return s     
      return None
      
           
-def delete_student(studentList,studentID):
+def delete_student(student_list,student_id):
      # i=-1
-     # for s in studentList:
+     # for s in student_list:
      #      i=i+1
      #      if s.get("id")==studentID:
-     #          studentList.pop(i)
+     #          student_list.pop(i)
      #          break
 
-     studentList[:]=[s for s in studentList if s.get("id")!=studentID]
+     student_list[:]=[s for s in student_list if s.id!=student_id]
 
-     save_data(studentList)
+     save_data(student_list)
     
   

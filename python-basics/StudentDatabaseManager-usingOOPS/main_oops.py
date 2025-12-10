@@ -1,47 +1,45 @@
-import logic
+import logic_oops
 import textwrap
 
 
-def executeUserCommand(studentList,userChoice):
-    match userChoice:
+def executeUserCommand(student_list,user_choice):
+    match user_choice:
         case "1":
             print("\nAdding student...\n")
-            studentName=input("please enter student name: ")
-            studentEmail=input("please enter student email id: ")
+            student_name=input("please enter student name: ")
+            student_email=input("please enter student email id: ")
 
-            logic.add_student(studentList,studentName,studentEmail)
+            logic_oops.add_student(student_list,student_name,student_email)
             print("\nstudent Added")
         case "2":
-            displayAllStudents(studentList)
+            displayAllStudents(student_list)
         case "3":
-            studentId=input("please enter student id: ")
+            student_id=int(input("please enter student id: "))
             print("\n", end="") 
-            studentData=logic.get_student_data(studentList,studentId)
-            for key,value in studentData.items():
-                 print(f"{key} :{value}")
+            student_data=logic_oops.get_student_data(student_list,student_id)
+            print(student_data)
+                 
         case "4":
-             studentId=input("please enter student id: ")
+             student_id=int(input("please enter student id: "))
              print("\n", end="") 
-             logic.delete_student(studentList,studentId)
+             logic_oops.delete_student(student_list,student_id)
      
             
 
 
-def displayAllStudents(studentList):
+def displayAllStudents(student_list):
     
     print("\n") 
  
-    for s in studentList:
-        for key,value in s.items():
-            print(f"{key} :{value}")
-        print("\n", end="") # Prints \n and stops there. No extra jump.       
+    for s in student_list:
+        print(s)      
     print("__________________________________________________")
 
 
 
 
 def main():
-    studentList=logic.load_data()
+    student_list=logic_oops.load_data()
     while True:
        
 
@@ -54,11 +52,11 @@ def main():
                  5.Exit            
                """))
 
-        userChoice=input("enter choice: ")
-
-        executeUserCommand(studentList,userChoice)
-        if userChoice=="5":
+        user_choice=input("enter choice: ")
+        if user_choice=="5":
             break
+        executeUserCommand(student_list,user_choice)
+      
         
         
 
