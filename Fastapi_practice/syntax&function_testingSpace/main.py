@@ -9,8 +9,9 @@ fake_db = []
 
 class StudentSchema(BaseModel):
     name : str
-    age:int
+    age:int | None=None
     email:str
+    hobbies:list[str]=[]
 
 @app.get("/")
 async def root():
