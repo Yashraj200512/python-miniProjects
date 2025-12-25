@@ -31,7 +31,6 @@ Projects focused on data extraction, web automation, and Flask integration.
 
 ---
 
-
 ##  How to Run
 
 1. **Student Manager (OOP Version):**
